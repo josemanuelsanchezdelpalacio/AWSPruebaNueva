@@ -1,28 +1,12 @@
 package services;
 
+import DTOs.CentroDTO;
 import DTOs.ProjectDTO;
 import com.google.gson.Gson;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class ListProjects {
-
-    public static String leerJson() {
-        Path filePath = Path.of("src/main/java/DTOs/insertProject.json");
-
-        try {
-            String jsonContent = new String(Files.readAllBytes(filePath));
-
-            Gson gson = new Gson();
-            return gson.toJson(jsonContent);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static String getProjectsList(){
         String projectsList = "";
@@ -35,6 +19,18 @@ public class ListProjects {
         projectsList = gson.toJson(listaProyectos);
         return projectsList;
 
+    }
+
+    public static String getCentrosList(String nombre, String direccion, String telefono, String email) {
+        String centrosList = "";
+        ArrayList<CentroDTO> listaCentros = new ArrayList<CentroDTO>();
+
+        CentroDTO pr1 = new CentroDTO(50008629, nombre, direccion, telefono, email);
+        listaCentros.add(pr1);
+
+        Gson gson = new Gson();
+        centrosList = gson.toJson(listaCentros);
+        return centrosList;
     }
 
 }

@@ -4,7 +4,7 @@ Resources:
     Properties:
       Timeout: 300
       MemorySize: 128
-      Handler: helloworld.App
+      Handler: helloworld.ListProjectsFunction
       CodeUri: Function
       Runtime: java17
       Architectures:

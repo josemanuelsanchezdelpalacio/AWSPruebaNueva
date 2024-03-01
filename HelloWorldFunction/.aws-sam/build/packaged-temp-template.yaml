@@ -4,8 +4,8 @@ Resources:
     Properties:
       Timeout: 300
       MemorySize: 128
-      Handler: helloworld.App
-      CodeUri: s3://amplify-proyectodi4-dev-124330-deployment/dbc0bb214acb5a718a866919ce8a58e6
+      Handler: helloworld.ListProjectsFunction
+      CodeUri: s3://amplify-proyectodi4-dev-124330-deployment/bcac15ff8d05387c50e2b8c91f813ba1
       Runtime: java17
       Architectures:
       - x86_64
